@@ -58,12 +58,12 @@ export default class PathfindingVisualiser extends Component {
         <button onClick={() => this.generateRandomWalls()}>
           Generate Random Walls
         </button>
-        <button onClick={() => this.recursiveDivisionMazeGeneration()}>
+        {/* <button onClick={() => this.recursiveDivisionMazeGeneration()}>
           Maze Generation: Recursive Division
         </button>
         <button onClick={() => this.visualiseAstar()}>
           Visualise A* Algorithm
-        </button>
+        </button> */}
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
