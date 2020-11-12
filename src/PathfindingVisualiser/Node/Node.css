@@ -1,7 +1,7 @@
 .node {
-  width: 20px;
-  height: 20px;
-  outline: 1px solid grey;
+  width: 50px;
+  height: 50px;
+  outline: 1px solid rgb(162, 153, 200);
   display: inline-block;
 }
 
@@ -24,6 +24,11 @@
 }
 
 .node-shortest-path {
-  background-color: rgb(216, 216, 66);
+  background-color: lightyellow;
   transition: 0.5s;
 }
+
+/* .node-visited {
+  background-color: cadetblue;
+  transition: 0.5s;
+} */

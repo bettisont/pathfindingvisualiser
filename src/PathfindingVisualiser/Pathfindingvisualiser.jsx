@@ -5,15 +5,17 @@ import {
   dijkstra,
   getNodesInShortestPathOrder,
 } from "../algorithms/dijkstra.js";
+import "bootstrap/dist/css/bootstrap.min.css"
+
 
 import { aStar } from "../algorithms/a*.js";
 
-const START_NODE_ROW = 14;
+const START_NODE_ROW = 5;
 const START_NODE_COL = 5;
-const FINISH_NODE_ROW = 14;
-const FINISH_NODE_COL = 20;
-const ROW_COUNT = 25;
-const COL_COUNT = 25;
+const FINISH_NODE_ROW = 15;
+const FINISH_NODE_COL = 25;
+const ROW_COUNT = 20;
+const COL_COUNT = 30;
 const REFRESH_RATE = 15;
 
 export default class PathfindingVisualiser extends Component {
@@ -52,18 +54,13 @@ export default class PathfindingVisualiser extends Component {
     const { grid, mouseIsPressed } = this.state;
     return (
       <>
-        <button onClick={() => this.visualiseDijkstra()}>
-          Visualise Dijkstra's Algorithm
-        </button>
-        <button onClick={() => this.generateRandomWalls()}>
-          Generate Random Walls
-        </button>
-        {/* <button onClick={() => this.recursiveDivisionMazeGeneration()}>
-          Maze Generation: Recursive Division
-        </button>
-        <button onClick={() => this.visualiseAstar()}>
-          Visualise A* Algorithm
-        </button> */}
+        <nav className="navbar navbar-light bg-light">
+            <form className="form-inline">
+                <button className="btn btn-outline-secondary" type="button" onClick={() => this.generateRandomWalls()}>Generate Random Walls</button>
+                <button className="btn btn-outline-success" type="button" onClick={() => this.visualiseDijkstra()}>Visualise Dijkstra's Algorithm</button>
+            </form>
+        </nav>
+
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
@@ -121,7 +118,6 @@ export default class PathfindingVisualiser extends Component {
     const verticalSplit = Math.random() > 0.5 ? true : false;
   }
 
-  mazeDivision() {}
 
   animateDijkstra(visitedNodesInOrder) {
     for (let i = 0; i < visitedNodesInOrder.length; i++) {
